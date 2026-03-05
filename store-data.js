@@ -131,7 +131,10 @@
       }
     });
 
-    return items;
+    return items.filter(function (item) {
+    return item.title !== "Pleated Pant";
+    });
+
   }
 
   function buildImageBySize(category, index) {
@@ -235,3 +238,4 @@
     formatMoney: formatMoney,
   };
 })();
+
