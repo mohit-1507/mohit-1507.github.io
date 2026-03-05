@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -13,7 +13,7 @@
   <header class="site-header">
     <a class="brand" href="index.html">
       <span class="brand-kicker">Women's Fashion Store</span>
-      <span class="brand-name">Verve</span>
+      <span class="brand-name">HerStyle</span>
     </a>
 
     <nav class="main-nav">
@@ -26,99 +26,29 @@
 
   <main class="container">
     <h1 class="section-title">Customer Feedback</h1>
-    <p class="muted">Share your shopping experience and fit feedback. Your responses are saved in this browser.</p>
+    <p class="muted">Please submit your response using the form below.</p>
 
-    <section class="feedback-layout">
-      <form id="feedbackForm" class="form-card" novalidate>
-        <h2>Submit Feedback</h2>
-
-        <div class="form-grid">
-          <div class="field">
-            <label for="feedbackName">Name</label>
-            <input id="feedbackName" name="name" required placeholder="Your name" />
-          </div>
-
-          <div class="field">
-            <label for="feedbackEmail">Email</label>
-            <input id="feedbackEmail" name="email" type="email" placeholder="you@example.com" />
-          </div>
-
-          <div class="field">
-            <label for="feedbackOrderId">Order ID (optional)</label>
-            <input id="feedbackOrderId" name="orderId" placeholder="HS12345678" />
-          </div>
-
-          <div class="field">
-            <label for="feedbackCategory">Category</label>
-            <select id="feedbackCategory" name="category" required>
-              <option value="Shopping Experience">Shopping Experience</option>
-              <option value="Product Quality">Product Quality</option>
-              <option value="Fit and Sizes">Fit and Sizes</option>
-              <option value="Delivery">Delivery</option>
-              <option value="Checkout">Checkout</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="feedbackRating">Overall Rating</label>
-            <select id="feedbackRating" name="rating" required>
-              <option value="5">5 - Excellent</option>
-              <option value="4">4 - Good</option>
-              <option value="3">3 - Okay</option>
-              <option value="2">2 - Poor</option>
-              <option value="1">1 - Very Poor</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="feedbackFit">Size/Fit Feedback</label>
-            <select id="feedbackFit" name="fitFeedback" required>
-              <option value="True to size">True to size</option>
-              <option value="Runs small">Runs small</option>
-              <option value="Runs large">Runs large</option>
-              <option value="Great for petite fit">Great for petite fit</option>
-              <option value="Great for wide fit">Great for wide fit</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="feedbackRecommend">Would you recommend us?</label>
-            <select id="feedbackRecommend" name="recommend" required>
-              <option value="yes">Yes</option>
-              <option value="maybe">Maybe</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-
-          <div class="field full">
-            <label for="feedbackMessage">Feedback</label>
-            <textarea id="feedbackMessage" name="message" rows="4" required placeholder="Tell us what worked well and what we should improve."></textarea>
-          </div>
-        </div>
-
-        <div class="detail-actions">
-          <button class="primary-btn" type="submit">Submit Feedback</button>
-          <button class="secondary-btn" type="reset">Reset</button>
-        </div>
-      </form>
-
-      <aside class="summary-card feedback-summary">
-        <div class="feedback-summary-head">
-          <h2>Saved Feedback</h2>
-          <button id="clearFeedback" class="ghost-btn" type="button">Clear All</button>
-        </div>
-        <p class="muted"><span id="feedbackCount">0</span> response(s)</p>
-        <div id="feedbackList" class="feedback-list"></div>
-      </aside>
+    <section class="form-card">
+      <h2>Submit Feedback</h2>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSd1bG8ed-m3RKt_62Undy7gfnF_51lQLGe6-7x1fJS-Mo0xkg/viewform?embedded=true"
+        width="100%"
+        height="1591"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        loading="lazy">
+        Loading...
+      </iframe>
     </section>
   </main>
 
-  <div id="feedbackToast" class="toast" hidden></div>
-
   <script src="store-data.js"></script>
   <script src="store-cart.js"></script>
-  <script src="store-feedback.js"></script>
-  <script src="feedback.js"></script>
+  <script>
+    if (window.StoreCart && typeof window.StoreCart.refreshBadges === "function") {
+      window.StoreCart.refreshBadges();
+    }
+  </script>
 </body>
 </html>
-
