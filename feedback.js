@@ -1,4 +1,4 @@
-﻿const refs = {
+const refs = {
   form: document.getElementById("feedbackForm"),
   list: document.getElementById("feedbackList"),
   count: document.getElementById("feedbackCount"),
@@ -7,6 +7,7 @@
 };
 
 let toastTimer = null;
+
 const DELETE_PASSWORD = "loler123";
 
 function requireDeletePassword(actionLabel) {
@@ -34,27 +35,26 @@ function initialize() {
     }, 0);
   });
 
- refs.clearAll.addEventListener("click", function () {
-  const hasFeedback = window.StoreFeedback.readAll().length > 0;
-  if (!hasFeedback) return;
+  refs.clearAll.addEventListener("click", function () {
+    const hasFeedback = window.StoreFeedback.readAll().length > 0;
+    if (!hasFeedback) return;
 
-  if (!requireDeletePassword("clear all feedback")) return;
+    if (!requireDeletePassword("clear all feedback")) return;
 
-  const ok = window.confirm("Delete all saved feedback entries?");
-  if (!ok) return;
+    const ok = window.confirm("Delete all saved feedback entries?");
+    if (!ok) return;
 
-  window.StoreFeedback.clear();
-  showToast("All feedback cleared");
-  renderFeedback();
-});
-
+    window.StoreFeedback.clear();
+    showToast("All feedback cleared");
+    renderFeedback();
+  });
 
   refs.list.addEventListener("click", function (event) {
     const removeButton = event.target.closest("button[data-remove-id]");
     if (!removeButton) return;
-  
+
     if (!requireDeletePassword("delete this feedback")) return;
-  
+
     const id = removeButton.dataset.removeId;
     window.StoreFeedback.remove(id);
     showToast("Feedback entry removed");
@@ -183,7 +183,3 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 }
-
-
-
-
