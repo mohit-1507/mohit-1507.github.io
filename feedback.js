@@ -54,7 +54,9 @@ function initialize() {
   refs.list.addEventListener("click", function (event) {
     const removeButton = event.target.closest("button[data-remove-id]");
     if (!removeButton) return;
-
+  
+    if (!requireDeletePassword("delete this feedback")) return;
+  
     const id = removeButton.dataset.removeId;
     window.StoreFeedback.remove(id);
     showToast("Feedback entry removed");
@@ -183,5 +185,6 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 }
+
 
 
