@@ -1,4 +1,4 @@
-﻿const products = window.StoreData.products;
+﻿const products = window.StoreData.products.filter(function (product) { return product.title !== "Pleated Pant";});
 const categories = window.StoreData.categories;
 const sizeOrder = window.StoreData.sizeOrder;
 
@@ -384,4 +384,5 @@ function capitalize(text) {
   if (!text) return "";
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
+
 
