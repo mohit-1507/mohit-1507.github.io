@@ -35,15 +35,20 @@ function initialize() {
   });
 
   refs.clearAll.addEventListener("click", function () {
+    refs.clearAll.addEventListener("click", function () {
     const hasFeedback = window.StoreFeedback.readAll().length > 0;
     if (!hasFeedback) return;
-
+  
+    if (!requireDeletePassword("clear all feedback")) return;
+  
     const ok = window.confirm("Delete all saved feedback entries?");
     if (!ok) return;
-
+  
     window.StoreFeedback.clear();
     showToast("All feedback cleared");
     renderFeedback();
+});
+
   });
 
   refs.list.addEventListener("click", function (event) {
@@ -178,4 +183,5 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 }
+
 
