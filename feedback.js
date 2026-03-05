@@ -7,6 +7,18 @@
 };
 
 let toastTimer = null;
+const DELETE_PASSWORD = "loler123";
+
+function requireDeletePassword(actionLabel) {
+  const entered = window.prompt("Enter password to " + actionLabel + ":");
+  if (entered === null) return false;
+  if (entered !== DELETE_PASSWORD) {
+    showToast("Wrong password");
+    return false;
+  }
+  return true;
+}
+
 
 initialize();
 
@@ -166,3 +178,4 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 }
+
