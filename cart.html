@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HerStyle | Cart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-kicker">Women's Fashion Store</span>
+      <span class="brand-name">HerStyle</span>
+    </a>
+
+    <nav class="main-nav">
+      <a class="nav-link" href="index.html">Shop</a>
+      <a class="nav-link active" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <a class="nav-link" href="checkout.html">Checkout</a>
+          <a class="nav-link" href="feedback.html">Feedback</a>`r`n    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title">Your Cart</h1>
+
+    <section class="cart-layout">
+      <div class="cart-items-card">
+        <div id="cartList" class="cart-list"></div>
+      </div>
+
+      <aside class="summary-card">
+        <h2>Order Summary</h2>
+        <div class="summary-lines">
+          <div class="summary-line"><span>Subtotal</span><strong id="subtotalValue"></strong></div>
+          <div class="summary-line"><span>Shipping</span><strong id="shippingValue"></strong></div>
+          <div class="summary-line"><span>Tax</span><strong id="taxValue"></strong></div>
+          <div class="summary-line"><span>Discount</span><strong id="discountValue"></strong></div>
+          <div class="summary-total"><span>Total</span><strong id="totalValue"></strong></div>
+        </div>
+
+        <a id="checkoutLink" class="primary-btn checkout-link" href="checkout.html">Proceed to Checkout</a>
+        <a class="link-btn" href="index.html">Continue shopping</a>
+      </aside>
+    </section>
+  </main>
+
+  <script src="store-data.js"></script>
+  <script src="store-cart.js"></script>
+  <script src="cart.js"></script>
+</body>
+</html>
+
+

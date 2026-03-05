@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HerStyle | Product Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-kicker">Women's Fashion Store</span>
+      <span class="brand-name">HerStyle</span>
+    </a>
+
+    <nav class="main-nav">
+      <a class="nav-link" href="index.html">Shop</a>
+      <a class="nav-link" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <a class="nav-link" href="checkout.html">Checkout</a>
+          <a class="nav-link" href="feedback.html">Feedback</a>`r`n    </nav>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Shop</a> / <span id="crumbTitle">Product</span></p>
+
+    <section id="detailContainer" class="detail-layout"></section>
+
+    <section>
+      <h2 class="section-title">Similar Picks</h2>
+      <div id="relatedGrid" class="related-grid"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="store-data.js"></script>
+  <script src="store-cart.js"></script>
+  <script src="product.js"></script>
+</body>
+</html>
+
+

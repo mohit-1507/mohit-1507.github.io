@@ -1,39 +1,151 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Hi Hello Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-            background-color: #f5f5f5;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HerStyle | Women Apparel Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-kicker">Women's Fashion Store</span>
+      <span class="brand-name">HerStyle</span>
+    </a>
 
-<h1>Hi 👋</h1>
-<p>Hello, welcome to my GitHub page.</p>
+    <nav class="main-nav">
+      <a class="nav-link active" href="index.html">Shop</a>
+      <a class="nav-link" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <a class="nav-link" href="checkout.html">Checkout</a>
+          <a class="nav-link" href="feedback.html">Feedback</a>`r`n    </nav>
+  </header>
 
-<button onclick="sayHello()">Click Me</button>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="hero-tag">Size-first shopping for women</p>
+        <h1>Find your fit faster with smart size filtering.</h1>
+        <p class="hero-sub">Explore blazers, shirts, skirts, pants, and vests with a clean, size-first shopping experience.</p>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <p>Categories</p>
+          <h2>5</h2>
+        </div>
+        <div>
+          <p>Products</p>
+          <h2 id="heroProductCount">0</h2>
+        </div>
+      </div>
+    </section>
 
-<script>
-function sayHello() {
-    alert("Hello from GitHub Pages!");
-}
-</script>
+    <section class="page-shell">
+      <aside class="panel filters-panel">
+        <div class="panel-head">
+          <h2>Filters</h2>
+          <button id="clearAll" class="ghost-btn" type="button">Reset</button>
+        </div>
 
+        <div class="filter-block">
+          <h3>Size Priority</h3>
+          <p class="hint">Start with your preferred size to narrow results quickly.</p>
+          <div id="sizeFilters" class="chip-grid"></div>
+        </div>
+
+        <div class="filter-block">
+          <h3>Category</h3>
+          <div id="categoryFilters" class="checkbox-list"></div>
+        </div>
+
+        <div class="filter-block">
+          <h3>Search</h3>
+          <div class="search-wrap">
+            <input id="searchInput" type="search" placeholder="Search products" />
+            <button id="clearSearch" class="ghost-btn" type="button">Clear</button>
+          </div>
+        </div>
+
+        <div class="filter-block">
+          <h3>Price</h3>
+          <label class="range-label" for="priceRange">Up to <span id="priceValue"></span></label>
+          <input id="priceRange" type="range" min="500" max="5000" step="100" value="5000" />
+        </div>
+
+        <div class="filter-block">
+          <h3>Minimum Rating</h3>
+          <select id="ratingFilter">
+            <option value="0">Any rating</option>
+            <option value="4.5">4.5+</option>
+            <option value="4">4.0+</option>
+            <option value="3.5">3.5+</option>
+            <option value="3">3.0+</option>
+          </select>
+        </div>
+
+        <div class="filter-block">
+          <label class="inline-check">
+            <input id="inStockOnly" type="checkbox" />
+            <span>In stock only</span>
+          </label>
+        </div>
+      </aside>
+
+      <section class="results-panel">
+        <div class="panel controls-bar">
+          <p id="resultCount" class="result-count"></p>
+          <p id="activeFilterCount" class="active-filter-count"></p>
+          <label class="sort-row" for="sortBy">
+            Sort
+            <select id="sortBy">
+              <option value="featured">Featured</option>
+              <option value="priceAsc">Price: Low to High</option>
+              <option value="priceDesc">Price: High to Low</option>
+              <option value="ratingDesc">Rating</option>
+              <option value="newest">Newest</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <template id="productCardTemplate">
+    <article class="product-card reveal">
+      <a class="image-link" data-detail-link>
+        <img alt="" loading="lazy" />
+      </a>
+      <div class="card-body">
+        <p class="meta-row">
+          <span class="category"></span>
+          <span class="badge"></span>
+        </p>
+        <a class="product-title" data-detail-link></a>
+        <p class="price-row">
+          <span class="price"></span>
+          <span class="old-price"></span>
+        </p>
+        <p class="rating"></p>
+        <div class="sizes"></div>
+        <div class="card-controls">
+          <select class="quick-size" aria-label="Quick size"></select>
+          <button type="button" class="primary-btn add-btn">Add to cart</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="store-data.js"></script>
+  <script src="store-cart.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
+
+
+

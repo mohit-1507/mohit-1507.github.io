@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HerStyle | Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-kicker">Women's Fashion Store</span>
+      <span class="brand-name">HerStyle</span>
+    </a>
+
+    <nav class="main-nav">
+      <a class="nav-link" href="index.html">Shop</a>
+      <a class="nav-link" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <a class="nav-link active" href="checkout.html">Checkout</a>
+          <a class="nav-link" href="feedback.html">Feedback</a>`r`n    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title">Checkout</h1>
+
+    <section id="checkoutLayout" class="checkout-layout">
+      <form id="checkoutForm" class="form-card" novalidate>
+        <h2>Shipping Details</h2>
+        <div class="form-grid">
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" required value="Aanya Sharma" />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric" value="9876543210" />
+          </div>
+          <div class="field full">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required value="aanya@example.com" />
+          </div>
+          <div class="field full">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3" required>221 Lake View Road, Sector 12</textarea>
+          </div>
+          <div class="field">
+            <label for="city">City</label>
+            <input id="city" name="city" required value="Bengaluru" />
+          </div>
+          <div class="field">
+            <label for="state">State</label>
+            <input id="state" name="state" required value="Karnataka" />
+          </div>
+          <div class="field">
+            <label for="pincode">Pincode</label>
+            <input id="pincode" name="pincode" required pattern="[0-9]{6}" maxlength="6" inputmode="numeric" value="560001" />
+          </div>
+        </div>
+
+        <h2>Payment Method</h2>
+        <div class="payment-options">
+          <label><input type="radio" name="paymentMethod" value="UPI" checked /> UPI</label>
+          <label><input type="radio" name="paymentMethod" value="Card" /> Card</label>
+          <label><input type="radio" name="paymentMethod" value="Cash on Delivery" /> Cash on Delivery</label>
+        </div>
+
+        <p class="muted">Secure checkout with instant order confirmation.</p>
+        <button id="placeOrderBtn" class="primary-btn" type="submit">Place Order</button>
+      </form>
+
+      <aside class="summary-card">
+        <h2>Order Review</h2>
+        <div id="orderList" class="order-list"></div>
+
+        <div class="summary-lines">
+          <div class="summary-line"><span>Subtotal</span><strong id="checkoutSubtotal"></strong></div>
+          <div class="summary-line"><span>Shipping</span><strong id="checkoutShipping"></strong></div>
+          <div class="summary-line"><span>Tax</span><strong id="checkoutTax"></strong></div>
+          <div class="summary-line"><span>Discount</span><strong id="checkoutDiscount"></strong></div>
+          <div class="summary-total"><span>Total</span><strong id="checkoutTotal"></strong></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="successBox" class="success-card" hidden></section>
+  </main>
+
+  <script src="store-data.js"></script>
+  <script src="store-cart.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>
+
+
+
+
