@@ -21,7 +21,7 @@
     pants: {
       label: "Pant",
       basePrice: 1699,
-      styles: ["Straight", "High Rise", "Pleated", "Everyday", "Wide Leg"],
+      styles: ["Straight", "High Rise", "Everyday", "Wide Leg"],
       fabrics: ["Cotton Twill", "Viscose Blend", "Crepe"],
       colors: ["Khaki", "Charcoal", "Olive", "Sand"],
       fit: ["Regular", "Relaxed", "Slim"],
@@ -238,4 +238,5 @@
     formatMoney: formatMoney,
   };
 })();
+
 
